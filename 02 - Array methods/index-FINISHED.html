@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Array Cardio 💪</title>
+  </head>
+  <body>
+    <p><em>Psst: have a look at the JavaScript Console</em> 💁</p>
+    <script>
+      // Let's do some Array Cardio
+
+      // Some data we can work with
+      const movies = [
+        {
+          title: 'Star Wars: Episode IV - A New Hope',
+          year: '1977',
+          rated: 'PG',
+          released: '25 May 1977',
+          runtime: '121 min',
+          genre: ['Action', 'Adventure', 'Fantasy'],
+          director: 'George Lucas',
+          writer: 'George Lucas',
+          actors: ['Mark Hamill', 'Harrison Ford', 'Carrie Fisher'],
+          plot: "Luke Skywalker joins forces with a Jedi Knight, a cocky pilot, a Wookiee and two droids to save the galaxy from the Empire's world-destroying battle station, while also attempting to rescue Princess Leia from the mysterious Darth ...",
+          language: 'English',
+          country: 'United States',
+          awards: 'Won 6 Oscars. 64 wins & 29 nominations total',
+          poster:
+            'https://m.media-amazon.com/images/M/MV5BOTA5NjhiOTAtZWM0ZC00MWNhLThiMzEtZDFkOTk2OTU1ZDJkXkEyXkFqcGdeQXVyMTA4NDI1NTQx._V1_SX300.jpg',
+          ratings: [
+            { source: 'Internet Movie Database', value: '8.6/10' },
+            { source: 'Rotten Tomatoes', value: '93%' },
+            { source: 'Metacritic', value: '90/100' },
+          ],
+          metascore: '90',
+          imdbRating: '8.6',
+          imdbVotes: '1,354,922',
+          imdbID: 'tt0076759',
+          Type: 'movie',
+          dvd: '06 Dec 2005',
+          boxOffice: '$460,998,507',
+          production: 'N/A',
+          website: 'N/A',
+        },
+        {
+          title: 'Jurassic Park',
+          year: '1993',
+          rated: 'PG-13',
+          released: '11 Jun 1993',
+          runtime: '127 min',
+          genre: ['Action, Adventure', 'Sci-Fi'],
+          director: 'Steven Spielberg',
+          writer: ['Michael Crichton', 'David Koepp'],
+          actors: ['Sam Neill', 'Laura Dern', 'Jeff Goldblum'],
+          plot: "A pragmatic paleontologist touring an almost complete theme park on an island in Central America is tasked with protecting a couple of kids after a power failure causes the park's cloned dinosaurs to run loose.",
+          language: ['English', 'Spanish'],
+          country: 'United States',
+          awards: 'Won 3 Oscars. 44 wins & 27 nominations total',
+          poster:
+            'https://m.media-amazon.com/images/M/MV5BMjM2MDgxMDg0Nl5BMl5BanBnXkFtZTgwNTM2OTM5NDE@._V1_SX300.jpg',
+          ratings: [
+            { source: 'Internet Movie Database', value: '8.2/10' },
+            { source: 'Rotten Tomatoes', value: '92%' },
+            { source: 'Metacritic', value: '68/100' },
+          ],
+          metascore: '68',
+          imdbRating: '8.2',
+          imdbVotes: '982,586',
+          imdbID: 'tt0107290',
+          Type: 'movie',
+          dvd: '28 Oct 2003',
+          boxOffice: '$404,214,720',
+          production: 'N/A',
+          website: 'N/A',
+        },
+        {
+          title: 'The Silence of the Lambs',
+          year: '1991',
+          rated: 'R',
+          released: '14 Feb 1991',
+          runtime: '118 min',
+          genre: ['Crime', 'Drama', 'Thriller'],
+          director: 'Jonathan Demme',
+          writer: ['Thomas Harris', 'Ted Tally'],
+          actors: ['Jodie Foster', 'Anthony Hopkins', 'Lawrence A. Bonney'],
+          plot: 'A young F.B.I. cadet must receive the help of an incarcerated and manipulative cannibal killer to help catch another serial killer, a madman who skins his victims.',
+          language: ['English', 'Latin'],
+          country: 'United States',
+          awards: 'Won 5 Oscars. 69 wins & 51 nominations total',
+          poster:
+            'https://m.media-amazon.com/images/M/MV5BNjNhZTk0ZmEtNjJhMi00YzFlLWE1MmEtYzM1M2ZmMGMwMTU4XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg',
+          ratings: [
+            { source: 'Internet Movie Database', value: '8.6/10' },
+            { source: 'Rotten Tomatoes', value: '95%' },
+            { source: 'Metacritic', value: '85/100' },
+          ],
+          metascore: '85',
+          imdbRating: '8.6',
+          imdbVotes: '1,420,630',
+          imdbID: 'tt0102926',
+          Type: 'movie',
+          dvd: '21 Aug 2001',
+          boxOffice: '$130,742,922',
+          production: 'N/A',
+          website: 'N/A',
+        },
+        {
+          title: 'Once Upon a Time in the West',
+          year: '1968',
+          rated: 'PG-13',
+          released: '04 Jul 1969',
+          runtime: '165 min',
+          genre: 'Western',
+          director: 'Sergio Leone',
+          writer: ['Sergio Donati', 'Sergio Leone', 'Dario Argento'],
+          actors: ['Henry Fonda', 'Charles Bronson', 'Claudia Cardinale'],
+          plot: 'A mysterious stranger with a harmonica joins forces with a notorious desperado to protect a beautiful widow from a ruthless assassin working for the railroad.',
+          language: ['Italian', 'English', 'Spanish'],
+          country: ['Italy', 'United States'],
+          awards: '5 wins & 5 nominations',
+          poster:
+            'https://m.media-amazon.com/images/M/MV5BODQ3NDExOGYtMzI3Mi00NWRlLTkwNjAtNjc4MDgzZGJiZTA1XkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_SX300.jpg',
+          ratings: [
+            { source: 'Internet Movie Database', value: '8.5/10' },
+            { source: 'Rotten Tomatoes', value: '95%' },
+            { source: 'Metacritic', value: '80/100' },
+          ],
+          metascore: '80',
+          imdbRating: '8.5',
+          imdbVotes: '328,568',
+          imdbID: 'tt0064116',
+          Type: 'movie',
+          dvd: '18 Nov 2003',
+          boxOffice: '$5,321,508',
+          production: 'N/A',
+          website: 'N/A',
+        },
+        {
+          title: 'Indiana Jones and the Raiders of the Lost Ark',
+          year: '1981',
+          rated: 'PG',
+          released: '12 Jun 1981',
+          runtime: '115 min',
+          genre: ['Action', 'Adventure'],
+          director: 'Steven Spielberg',
+          writer: ['Lawrence Kasdan', 'George Lucas', 'Philip Kaufman'],
+          actors: ['Harrison Ford', 'Karen Allen', 'Paul Freeman'],
+          plot: 'Archaeology professor Indiana Jones ventures to seize a biblical artefact known as the Ark of the Covenant. While doing so, he puts up a fight against Renee and a troop of Nazis.',
+          language: [
+            'English',
+            'German',
+            'Hebrew',
+            'Spanish',
+            'Arabic',
+            'Nepali',
+          ],
+          country: 'United States',
+          awards: 'Won 4 Oscars. 38 wins & 24 nominations total',
+          poster:
+            'https://m.media-amazon.com/images/M/MV5BNTU2ODkyY2MtMjU1NC00NjE1LWEzYjgtMWQ3MzRhMTE0NDc0XkEyXkFqcGdeQXVyMjM4MzQ4OTQ@._V1_SX300.jpg',
+          ratings: [
+            { source: 'Internet Movie Database', value: '8.4/10' },
+            { source: 'Rotten Tomatoes', value: '96%' },
+            { source: 'Metacritic', value: '85/100' },
+          ],
+          metascore: '85',
+          imdbRating: '8.4',
+          imdbVotes: '960,537',
+          imdbID: 'tt0082971',
+          Type: 'movie',
+          dvd: '13 May 2008',
+          boxOffice: '$248,159,971',
+          production: 'N/A',
+          website: 'N/A',
+        },
+      ];
+
+      // # Try to use object deconstruction for this
+
+      // ##  array.map()
+      // 1. Create a new array which contains only the movie titles
+      const titles = movies.map(({ title }) => title)
+
+      // 2. Create a new array which contains an object with the movie title and imdb rating
+      const titlesWithRating = movies.map(({ title, rating }) => {
+        return { title, rating }
+      })
+
+      // 3. Create a new array, with the movie title and shortDescription. 
+      //    The short description is the first sentence of the plot, you can use `string.split('.')[0]` 
+      const movieWithDescription = movies.map(({ title, plot }) => {
+        return {
+          title,
+          shortDescription: plot.split('.')[0]
+        }
+      })
+
+      // ##  array.filter()
+      // 4. Create a new movie array with only movies that have a metascore above 80 
+      //    hint: To have a good comparision you have to parse this as a int with parseInt(metascore)
+      const moviesAboveEighty = movies.filter(({ metascore }) => parseInt(metascore) > 80
+      )
+
+      // 5. Create an array with just the titles of movies that have metascore above 80
+      //    hint: You can chain array methods
+      const titlesMoviesAboveEighty = moviesAboveEighty.map(({title}) => title)
+
+      // ## array.find()
+      // 6. Find the item with imdbID 'tt0064116'
+      const movieWithId = movies.find(({ imdbID }) => imdbID === 'tt0064116')
+
+      // 7. Create a variable with the director of imdbID 'tt0064116'
+      const { director } = movieWithId
+
+      // ## array.some()
+      // 8. Find out if one of the movies is 'R' rated 
+      const hasRRating = movies.some(({rating}) => rating === 'R');
+
+      console.log('1. Create a new array which contains only the movie titles', {answer: titles})
+      console.log('2. Create a new array which contains an object with the movie title and imdb rating', {answer: titlesWithRating})
+      console.log('3. Create a new array, with the movie title and shortDescription.', {answer: movieWithDescription})
+      console.log('4. Create a new movie array with only movies that have a metascore above 80.', {answer: moviesAboveEighty})
+      console.log('5. Create an array with just the titles of movies that have metascore above 80.', {answer: titlesMoviesAboveEighty})
+      console.log('6. Find the item with imdbID \'tt0064116\'.', {answer: titlesMoviesAboveEighty})
+      console.log('7. Create a variable with the director of imdbID \'tt0064116\'', {answer: director})
+      console.log('8. Find out if one of the movies is \'R\' rated', {answer: hasRRating})
+
+   </script>
+  </body>
+</html>
