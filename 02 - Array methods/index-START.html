@@ -207,10 +207,10 @@
 
       // ## array.find()
       // 6. Find the item with imdbID 'tt0064116'
-        const specific_movie = movies.find(movie => (movie.imdbID))
+        const specific_movie = movies.find(movie => (movie.imdbID==="tt0064116"))
 
       // 7. Create a variable with the director of imdbID 'tt0064116'
-        const specific_director = movies.find(movie => (movie.imdbID)).director
+        const specific_director = movies.find(movie => (movie.imdbID==="tt0064116")).director
 
       // ## array.some()
       // 8. Find out if one of the movies is 'R' rated
