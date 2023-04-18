@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
+<head>
+    <meta charset="UTF-8"/>
     <title>Object deconstruction 💪</title>
-  </head>
-  <body>
-    <p><em>Psst: have a look at the JavaScript Console</em> 💁</p>
-    <script>
-      // Let's do some construction and deconstruction 🚧👷
+</head>
+<body>
+<p><em>Psst: have a look at the JavaScript Console</em> 💁</p>
+<script>
+    // Let's do some construction and deconstruction 🚧👷
 
-      // Some data we can work with
-      const movie = {
+    // Some data we can work with
+    const movie = {
         title: 'Jurassic Park',
         year: '1993',
         rated: 'PG-13',
@@ -25,28 +25,50 @@
         country: 'United States',
         awards: 'Won 3 Oscars. 44 wins & 27 nominations total',
         poster:
-          'https://m.media-amazon.com/images/M/MV5BMjM2MDgxMDg0Nl5BMl5BanBnXkFtZTgwNTM2OTM5NDE@._V1_SX300.jpg',
+            'https://m.media-amazon.com/images/M/MV5BMjM2MDgxMDg0Nl5BMl5BanBnXkFtZTgwNTM2OTM5NDE@._V1_SX300.jpg',
         ratings: {
-          imdb: '8.2/10',
-          rottenTomatoes: '92%',
-          metacritic: '68/100',
+            imdb: '8.2/10',
+            rottenTomatoes: '92%',
+            metacritic: '68/100',
         },
-      };
+    };
 
-      // # Try to use object deconstruction for this
+    // # Try to use object deconstruction for this
 
-      // 1. Create a new const variable which contains the director 
+    // 1. Create a new const variable which contains the director
+    const {director} = movie
+    console.log("director:")
+    console.log(director)
+    // 2. Create a new const variable which contains the second language of the movie
 
-      // 2. Create a new const variable which contains the second language of the movie
 
-      // 3. Create a new const variable which contains the metacritic score
+    const {language: [firstLanguage, secondLanguage]} = movie
+    console.log("second language:")
+    console.log(secondLanguage)
+    // 3. Create a new const variable which contains the metacritic score
 
-      // 4. Create a new object that is equal to the movie object, with as only difference that the ratings are not there.
-      // Hint: rest operator
+    const {metacritic} = movie.ratings
+    console.log("metacritic score:")
+    console.log(metacritic)
 
-      // 5. Create a new object that is equal to the movie object, 
-      // with as only difference that the awards field contains the value: "coolblue's keuze".
-      // Hint: spread operator
-    </script>
-  </body>
+    // 4. Create a new object that is equal to the movie object, with as only difference that the ratings are not there.
+    // Hint: rest operator
+
+    const {ratings, ...movieTwo} = movie
+
+    console.log("new movie")
+    console.log(movieTwo)
+    // 5. Create a new object that is equal to the movie object,
+    // with as only difference that the awards field contains the value: "coolblue's keuze".
+    // Hint: spread operator
+
+    const newMovie = {
+        ...movie,
+        awards: "coolblue's keuze"
+    }
+
+    console.log("new movie")
+    console.log(newMovie)
+</script>
+</body>
 </html>
