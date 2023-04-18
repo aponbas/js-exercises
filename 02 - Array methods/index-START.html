@@ -179,14 +179,21 @@
 
       // ##  array.map()
       // 1. Create a new array which contains only the movie titles
+      const titles = movies.map((movie) => movie.title);
 
       // 2. Create a new array which contains an object with the movie title and imdb rating
+      const title_rating = movies.map(
+              ({title, imdbRating}) =>
+              ({title, imdbRating}))
 
-      // 3. Create a new array, with the movie title and shortDescription. 
-      //    The short description is the first sentence of the plot, you can use `string.split('.')[0]` 
+      // 3. Create a new array, with the movie title and shortDescription.
+      //    The short description is the first sentence of the plot, you can use `string.split('.')[0]`
+      const title_description = movies.map(
+              ({title, plot}) =>
+              ({title, shortDescription: plot.split(".")[0]}))
 
       // ##  array.filter()
-      // 4. Create a new movie array with only movies that have a metascore above 80 
+      // 4. Create a new movie array with only movies that have a metascore above 80
       //    hint: To have a good comparision you have to parse this as a int with parseInt(metascore)
 
       // 5. Create an array with just the titles of movies that have metascore above 80
@@ -194,11 +201,11 @@
 
       // ## array.find()
       // 6. Find the item with imdbID 'tt0064116'
-      
+
       // 7. Create a variable with the director of imdbID 'tt0064116'
 
       // ## array.some()
-      // 8. Find out if one of the movies is 'R' rated 
+      // 8. Find out if one of the movies is 'R' rated
    </script>
   </body>
 </html>
